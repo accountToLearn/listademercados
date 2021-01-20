@@ -52,7 +52,7 @@ de cobertura, conforme configurado, é satisfeito.
 
 ## Empacotando o projeto
 - `mvn package`<br>
-gera arquivo listademercado-VERSÃO.war_ no diretório _target_.
+gera arquivo _listademercado-VERSÃO.war_ no diretório _target_.
 
 ## Análise estática
 Trata-se da análise do código sem que seja executado. Esta análise produz
