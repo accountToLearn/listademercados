@@ -1,0 +1,6 @@
+FROM openjdk:14
+LABEL maintrainer="accounttolearn"
+ENV DIRECTORY_MAIN=/var/www
+ADD . $DIRECTORY_MAIN
+WORKDIR $DIRECTORY_MAIN
+EXPOSE 9000
