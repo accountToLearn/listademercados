@@ -52,7 +52,8 @@ de cobertura, conforme configurado, é satisfeito.
 
 ## Empacotando o projeto
 - `mvn package`<br>
-gera arquivo _listademercado-VERSÃO.war_ no diretório _target_.
+gera arquivo _listademercado-VERSÃO.war_ no diretório _target_.<br>
+**OBS:** a utilização do Jenkins, nos obriga a compilar o pacote pelo maven com Java 8.
 
 ## Análise estática
 Trata-se da análise do código sem que seja executado. Esta análise produz
@@ -74,6 +75,7 @@ estática observa o código.
 ### Tecnologias utilizadas
 - [![Java 14](https://img.shields.io/badge/Java-14-1f425f.svg)](https://docs.oracle.com/en/java/javase/14/)
 - [![Maven](https://img.shields.io/badge/Maven-1f425f.svg)](https://maven.apache.org/guides/index.html)
+- [![Jenkins](https://img.shields.io/badge/Jenkins-1f425f.svg)](https://www.jenkins.io/doc/)
 
 ### Autor
 ---
