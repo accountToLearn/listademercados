@@ -26,6 +26,7 @@ O projeto inclui:<br>
 "boas práticas" para inspirar projetos reais.
 
 ## Pré-requisitos
+- `docker --version`
 - `mvn --version` 
 - `java -version`  
  > Você deverá ver a indicação da versão do Maven instalada e a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como a definição das variáveis de ambientes **JAVA_HOME** e **M2_HOME**
@@ -34,6 +35,10 @@ O projeto inclui:<br>
 - `git clone https://github.com/accountToLearn/listademercados.git`
 
 Agora você poderá executar os vários comandos abaixo.
+
+## Criar imagem e container do projeto
+- `docker build -t java .`
+- `docker run -d -t --name java --restart=always -p 9000:9000 -v '/vagrant/volumes:/var/www/volumes' java` 
 
 ## Limpar, compilar, executar testes de unidade e cobertura
 - `mvn clean`<br>
@@ -76,6 +81,7 @@ estática observa o código.
 - [![Java 14](https://img.shields.io/badge/Java-14-1f425f.svg)](https://docs.oracle.com/en/java/javase/14/)
 - [![Maven](https://img.shields.io/badge/Maven-1f425f.svg)](https://maven.apache.org/guides/index.html)
 - [![Jenkins](https://img.shields.io/badge/Jenkins-1f425f.svg)](https://www.jenkins.io/doc/)
+- [![Docker](https://img.shields.io/badge/Docker-1f425f.svg)](https://docs.docker.com/)
 
 ### Autor
 ---
