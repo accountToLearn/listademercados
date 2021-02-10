@@ -37,8 +37,8 @@ O projeto inclui:<br>
 Agora você poderá executar os vários comandos abaixo.
 
 ## Criar imagem e container do projeto
-- `docker build -t java .`
-- `docker run -d -t --name java --restart=always -p 9000:9000 -v '/vagrant/volumes:/var/www/volumes' java` 
+- `docker-compose build` ou `docker build -t java .`
+- `docker-compose up -d` ou `docker run -d -t --name java --restart=always -p 9000:9000 -v '/vagrant/volumes:/var/www/volumes' java` 
 
 ## Limpar, compilar, executar testes de unidade e cobertura
 - `mvn clean`<br>
