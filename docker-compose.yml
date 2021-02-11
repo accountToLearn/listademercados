@@ -5,7 +5,7 @@ services:
       image: java
       container_name: java
       ports: 
-         - "9000"
+         - "9000:9000"
       networks: 
          - minha-rede
 networks:
