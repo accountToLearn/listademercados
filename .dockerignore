@@ -4,3 +4,4 @@
 !.gitignore
 !/src/*
 !Dockerfile
+!docker-compose.yml

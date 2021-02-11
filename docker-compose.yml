@@ -1,0 +1,15 @@
+version: '3'
+services:
+   java:
+      build: .
+      image: java
+      container_name: java
+      ports: 
+         - "9000:9000"
+      volumes:
+         - /vagrant/volumes:/var/www/volumes
+      networks: 
+         - minha-rede
+networks:
+   minha-rede:
+      driver: bridge
