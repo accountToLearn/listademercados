@@ -37,8 +37,12 @@ O projeto inclui:<br>
 Agora você poderá executar os vários comandos abaixo.
 
 ## Criar imagem e container do projeto
-- `docker-compose build` ou `docker build -t java .`
-- `docker-compose up -d` ou `docker run -d -t --name java --restart=always -p 9000:9000 -v '/vagrant/volumes:/var/www/volumes' java` 
+- `docker-compose build --build-arg PORTA=**NUMERO**` ou `docker build --build-arg PORTA=**NUMERO** -t **NOME** .`
+- `docker-compose up -d` ou `docker run -d -t --name **NOME** --restart=always -p 9000:9000 -v '**DIRETÓRIO**:**DIRETÓRIO**' **NOME**` 
+
+## Também pode trabalhar com o docker swarm
+- `docker swarm init --advertise-addr **IP**`
+- `docker stack deploy --compose-file docker-stack.yml **NOME**`
 
 ## Limpar, compilar, executar testes de unidade e cobertura
 - `mvn clean`<br>
