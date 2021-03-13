@@ -1,23 +1,30 @@
 version: '3.9'
 services:
    java:
-      image: accounttolearn/marketlist:dev
+      image: accounttolearn/marketlist
       environment:
-         PORTA: 9000
+         PORTA: 9003
       ports:
-         - "9000:9000"
+         - "9003:9003"
       volumes:
          - "/home/docker/volumes:/var/www/volumes"
       networks:
          - minha-rede
       deploy:
-         replicas: 1
+         replicas: 2
+         update_config:
+            parallelism: 2
+            delay: 10s
+            order: stop-first
+            max_failure_ratio: 1
+            failure_action: rollback
          restart_policy:
             condition: on-failure
          placement:
+            max_replicas_per_node: 1
             constraints:
                - "node.role==worker"
-               - "node.labels.ambiente==dev"
+               - "node.labels.ambiente==prd"
 networks:
    minha-rede:
       driver: overlay

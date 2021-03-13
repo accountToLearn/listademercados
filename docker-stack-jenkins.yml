@@ -1,0 +1,32 @@
+version: '3.9'
+services:
+   jenkins:
+      image: accounttolearn/jenkins-and-maven
+      hostname: jenkins
+      ports:
+         - "8080:8080"
+      volumes:
+         - "/home/docker/volumes:/var/jenkins/volumes"
+      networks:
+         - minha-rede
+      deploy:
+         replicas: 1
+         restart_policy:
+            condition: on-failure
+         placement:
+            constraints:
+               - "node.role==worker"
+               - "node.labels.ambiente==dev"
+   visualizer:
+      image: dockersamples/visualizer
+      ports:
+         - "5000:8080"
+      stop_grace_period: 1m30s
+      volumes:
+         - /var/run/docker.sock:/var/run/docker.sock
+      deploy:
+         placement:
+            constraints: [node.role == manager]
+networks:
+   minha-rede:
+      driver: overlay

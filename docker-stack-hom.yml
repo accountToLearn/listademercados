@@ -1,11 +1,11 @@
 version: '3.9'
 services:
    java:
-      image: accounttolearn/marketlist:dev
+      image: accounttolearn/marketlist:hom
       environment:
-         PORTA: 9000
+         PORTA: 9002
       ports:
-         - "9000:9000"
+         - "9002:9002"
       volumes:
          - "/home/docker/volumes:/var/www/volumes"
       networks:
@@ -17,7 +17,7 @@ services:
          placement:
             constraints:
                - "node.role==worker"
-               - "node.labels.ambiente==dev"
+               - "node.labels.ambiente==hom"
 networks:
    minha-rede:
       driver: overlay
