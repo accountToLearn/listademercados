@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+   java:
+      image: accounttolearn/marketlist:hom
+      environment:
+         PORTA: 9002
+      ports:
+         - "9002:9002"
+      volumes:
+         - "/home/docker/volumes:/var/www/volumes"
+      networks:
+         - minha-rede
+      deploy:
+         replicas: 1
+         restart_policy:
+            condition: on-failure
+         placement:
+            constraints:
+               - "node.role==worker"
+               - "node.labels.ambiente==hom"
+networks:
+   minha-rede:
+      driver: overlay
