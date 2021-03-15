@@ -42,7 +42,7 @@ Agora você poderá executar os vários comandos abaixo.
 
 ## Também pode trabalhar com o docker swarm
 - `docker swarm init --advertise-addr **IP**`
-- `docker stack deploy --compose-file docker-stack.yml **NOME**`
+- `docker stack deploy --compose-file docker-stack-java.yml **NOME**`
 
 ## Limpar, compilar, executar testes de unidade e cobertura
 - `mvn clean`<br>
