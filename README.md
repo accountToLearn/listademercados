@@ -50,6 +50,7 @@ remove diretório _target_
 
 - `mvn compile`<br>
 compila o projeto, deposita resultados no diretório _target_
+**OBS:** a utilização do Jenkins, nos obriga a compilar o pacote pelo maven com Java 8.
 
 - `mvn test`<br>
 executa todos os testes do projeto. Para executar apenas parte dos testes, por exemplo,
@@ -61,8 +62,12 @@ de cobertura, conforme configurado, é satisfeito.
 
 ## Empacotando o projeto
 - `mvn package`<br>
-gera arquivo _listademercado-VERSÃO.war_ no diretório _target_.<br>
-**OBS:** a utilização do Jenkins, nos obriga a compilar o pacote pelo maven com Java 8.
+Gera arquivo _listademercado-VERSÃO.war_ no diretório _target_.<br>
+Com dockerfile-maven-plugin, esse comando também criará uma imagem do dockerfile. Buscando tag e porta das variáveis de ambientes.
+
+## Realizar push da imagem do dockerfile
+- `mvn dockerfile:push`<br>
+Esse comando realizará um docker push pelo maven.
 
 ## Análise estática
 Trata-se da análise do código sem que seja executado. Esta análise produz
