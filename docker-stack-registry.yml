@@ -1,12 +1,10 @@
 version: '3.8'
 services:
-   jenkins:
-      image: accounttolearn/jenkins-and-maven
-      hostname: jenkins
+   registry:
+      image: registry:2
+      hostname: registry
       ports:
-         - "8080:8080"
-      volumes:
-         - "/home/docker/volumes:/var/jenkins/volumes"
+         - "5001:5000"
       networks:
          - minha-rede
       deploy:
@@ -16,8 +14,8 @@ services:
          placement:
             max_replicas_per_node: 1
             constraints:
-               - "node.role==worker"
-               - "node.labels.vm==jen"
+               - "node.role==manager"
+               - "node.labels.vm==reg"
 networks:
    minha-rede:
       driver: overlay
