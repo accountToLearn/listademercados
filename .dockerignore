@@ -5,4 +5,4 @@
 !/src/*
 !Dockerfile
 !docker-compose.yml
-!docker-stack.yml
+!docker-stack*.yml

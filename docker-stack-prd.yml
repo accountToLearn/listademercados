@@ -24,7 +24,7 @@ services:
             max_replicas_per_node: 1
             constraints:
                - "node.role==worker"
-               - "node.labels.ambiente==prd"
+               - "node.labels.vm==prd"
 networks:
    minha-rede:
       driver: overlay

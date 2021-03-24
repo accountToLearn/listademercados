@@ -37,7 +37,7 @@ O projeto inclui:<br>
 Agora você poderá executar os vários comandos abaixo.
 
 ## Criar imagem e container do projeto
-- `docker-compose build --build-arg PORTA=**NUMERO**` ou `docker build --build-arg PORTA=**NUMERO** -t **NOME** .`
+- `docker-compose build --build-arg porta=**NUMERO**` ou `docker build --build-arg porta=**NUMERO** -t **NOME** .`
 - `docker-compose up -d` ou `docker run -d -t --name **NOME** --restart=always -p 9000:9000 -v '**DIRETÓRIO**:**DIRETÓRIO**' **NOME**` 
 
 ## Também pode trabalhar com o docker swarm
