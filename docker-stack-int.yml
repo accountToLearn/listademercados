@@ -1,7 +1,7 @@
 version: '3.8'
 services:
    java:
-      image: accounttolearn/marketlist:int
+      image: localhost:5001/marketlist:int
       environment:
          PORTA: 9001
       ports:
@@ -15,9 +15,10 @@ services:
          restart_policy:
             condition: on-failure
          placement:
+            max_replicas_per_node: 1
             constraints:
                - "node.role==worker"
-               - "node.labels.ambiente==hom"
+               - "node.labels.vm==int"
 networks:
    minha-rede:
       driver: overlay

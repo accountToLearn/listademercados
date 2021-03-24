@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+   visualizer:
+      image: dockersamples/visualizer
+      ports:
+         - "5000:8080"
+      stop_grace_period: 1m30s
+      volumes:
+         - /var/run/docker.sock:/var/run/docker.sock
+      deploy:
+         placement:
+            max_replicas_per_node: 1
+            constraints:
+               - "node.role==manager"
+               - "node.labels.vm==vis"
+networks:
+   minha-rede:
+      driver: overlay
