@@ -3,7 +3,7 @@ services:
    java:
       image: localhost:5001/marketlist:int
       environment:
-         PORTA: 9001
+         PORTA_IMAGEM_DOCKER: 9001
       ports:
          - "9001:9001"
       volumes:

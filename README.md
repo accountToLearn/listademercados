@@ -36,20 +36,22 @@ O projeto inclui:<br>
 
 Agora você poderá executar os vários comandos abaixo.
 
-## Criar imagem e container do projeto
+## Trabalhando com docker:
+### Criar imagem e o container do projeto
 - `docker-compose build --build-arg porta=**NUMERO**` ou `docker build --build-arg porta=**NUMERO** -t **NOME** .`
-- `docker-compose up -d` ou `docker run -d -t --name **NOME** --restart=always -p 9000:9000 -v '**DIRETÓRIO**:**DIRETÓRIO**' **NOME**` 
+- `docker-compose up -d` ou `docker run -d -t --name **NOME** --restart=always -p **NUMERO**:**NUMERO** -v '**DIRETÓRIO**:**DIRETÓRIO**' **IMAGEM**` 
 
-## Também pode trabalhar com o docker swarm
+### Também podemos trabalhar com docker swarm
 - `docker swarm init --advertise-addr **IP**`
-- `docker stack deploy --compose-file docker-stack-java.yml **NOME**`
+- `docker stack deploy --compose-file docker-stack-dev.yml **NOME**`
 
-## Limpar, compilar, executar testes de unidade e cobertura
+## Trabalhando com maven:
+### Limpar, compilar, executar testes de unidade e cobertura
 - `mvn clean`<br>
 remove diretório _target_
 
 - `mvn compile`<br>
-compila o projeto, deposita resultados no diretório _target_
+compila o projeto, deposita resultados no diretório _target_<br>
 **OBS:** a utilização do Jenkins, nos obriga a compilar o pacote pelo maven com Java 8.
 
 - `mvn test`<br>
@@ -60,16 +62,11 @@ que o sufixo do nome da classe de teste é `Test` (padrão recomendado). Para ex
 cobertura em _target/site/jacoco/index.html_ além de verificar se limite mínimo
 de cobertura, conforme configurado, é satisfeito.
 
-## Empacotando o projeto
+### Empacotando o projeto
 - `mvn package`<br>
 Gera arquivo _listademercado-VERSÃO.war_ no diretório _target_.<br>
-Com dockerfile-maven-plugin, esse comando também criará uma imagem do dockerfile. Buscando tag e porta das variáveis de ambientes.
 
-## Realizar push da imagem do dockerfile
-- `mvn dockerfile:push`<br>
-Esse comando realizará um docker push pelo maven.
-
-## Análise estática
+### Análise estática
 Trata-se da análise do código sem que seja executado. Esta análise produz
 uma "noção de quão bom" está o código sob alguns aspecto e, em consequência, 
 permite orientar eventuais ações de melhoria. Fique atento, "sair 
@@ -86,13 +83,13 @@ estática observa o código.
   Gera relatório em *target/site/jacoco/index.html*.<br>
   Relatório de cobertura dos testes unitários do projeto.
   
-### Tecnologias utilizadas
+## Tecnologias utilizadas
 - [![Java 14](https://img.shields.io/badge/Java-14-1f425f.svg)](https://docs.oracle.com/en/java/javase/14/)
 - [![Maven](https://img.shields.io/badge/Maven-1f425f.svg)](https://maven.apache.org/guides/index.html)
 - [![Jenkins](https://img.shields.io/badge/Jenkins-1f425f.svg)](https://www.jenkins.io/doc/)
 - [![Docker](https://img.shields.io/badge/Docker-1f425f.svg)](https://docs.docker.com/)
 
-### Autor
+## Autor
 ---
 
 <a href="">

@@ -3,7 +3,7 @@ services:
    java:
       image: accounttolearn/marketlist
       environment:
-         PORTA: 9003
+         PORTA_IMAGEM_DOCKER: 9003
       ports:
          - "9003:9003"
       volumes:
